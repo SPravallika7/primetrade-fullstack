@@ -1,26 +1,19 @@
-PrimeTrade Full Stack Assignment
+PrimeTrade Frontend Developer Intern Assignment
 🚀 Tech Stack
 
 Frontend
-
-React
-
-Bootstrap
-
-Axios
+-> React
+-> Bootstrap
+-> Axios
 
 Backend
-
-Node.js
-
-Express
+->Node.js
+->Express
 
 Database
-
 MongoDB Atlas
 
 Authentication
-
 JWT (JSON Web Tokens)
 
 📁 Project Structure
@@ -39,7 +32,6 @@ npm install
 
 
 Create .env file:
-
 PORT=5000
 NODE_ENV=development
 MONGO_URI=YOUR_MONGODB_URI
@@ -48,12 +40,10 @@ JWT_EXPIRES_IN=7d
 
 
 Run backend:
-
 npm run dev
 
 
 Server runs on:
-
 http://localhost:5000
 
 Frontend
@@ -63,24 +53,18 @@ npm start
 
 
 Runs on:
-
 http://localhost:3000
 
 🧪 API Testing (Postman)
 
 Import:
-
 postman/primetrade.postman_collection.json
 
 
 Flow:
-
 Register User
-
 Login → copy JWT token
-
 Paste token in Authorization tab (Bearer Token)
-
 Access Tasks + Profile APIs
 
 👤 Demo Credentials
@@ -89,28 +73,25 @@ You can register any user.
 
 Example:
 
-Email: ganesh@gmail.com
-Password: ganesh@123
+Email: joy@gmail.com
+Password: joy@123
 
 📈 How I Would Scale This for Production
+->Dockerize frontend & backend
 
-Dockerize frontend & backend
+->Environment variables via AWS Secrets Manager
 
-Nginx reverse proxy
+->MongoDB indexing (email, userId)
 
-Environment variables via AWS Secrets Manager
+->Redis caching for tasks
 
-MongoDB indexing (email, userId)
+->JWT refresh tokens
 
-Redis caching for tasks
+->AWS ALB Load Balancer
 
-JWT refresh tokens
+->CI/CD with GitHub Actions
 
-AWS ALB Load Balancer
+->Strict CORS whitelist
 
-CI/CD with GitHub Actions
-
-Strict CORS whitelist
-
-Rate limiting + Helmet security middleware
+->Rate limiting + Helmet security middleware
 
