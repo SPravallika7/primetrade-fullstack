@@ -1,62 +1,99 @@
-# PrimeTrade Full Stack Assignment
+PrimeTrade Full Stack Assignment
+ Tech Stack:
 
-## Tech Stack
-Frontend: React + Bootstrap  
-Backend: Node.js + Express  
-Database: MongoDB Atlas  
-Auth: JWT  
+Frontend
+-> React
+-> Bootstrap
+-> Axios
 
+Backend
+-> Node.js
+-> Express
+-> Database
 
-## Setup Instructions
-### Backend
+MongoDB Atlas
+
+Authentication
+-> JWT (JSON Web Tokens)
+
+Project Structure
+primetrade-fullstack/
+│
+├── backend/
+├── frontend/
+├── postman/
+│   └── primetrade.postman_collection.json
+└── README.md
+
+ Setup Instructions
+Backend:
 cd backend
 npm install
 
-Create .env:
+Create .env file:
 PORT=5000
 NODE_ENV=development
-MONGO_URI=YOUR_MONGO_URI
+MONGO_URI=YOUR_MONGODB_URI
 JWT_SECRET=YOUR_SECRET
 JWT_EXPIRES_IN=7d
 
-Run:
+
+Run backend:
 npm run dev
+
+
+Server runs on:
+http://localhost:5000
+
 Frontend
 cd frontend
 npm install
 npm start
+
+
 Runs on:
 http://localhost:3000
 
-Postman
+API Testing (Postman)
+
 Import:
 postman/primetrade.postman_collection.json
-Register user → Login → Copy token → Use for Tasks.
+
+Flow:
+Register User
+Login → copy JWT token
+Paste token in Authorization tab (Bearer Token)
+Access Tasks + Profile APIs
 
 Demo Credentials
-Create any user via Register API.
+
+You can register any user.
 
 Example:
 Email: ganesh@gmail.com
 Password: ganesh@123
 
-Scaling for Production
-Dockerize frontend/backend
+''' Mongo Atlas may fail on some networks.
+Use local Mongo if needed. '''
 
-Use Nginx reverse proxy
 
-Environment variables via secrets manager
+How I Would Scale This for Production:
+-> Dockerize frontend & backend
 
-MongoDB indexes on email + userId
+-> Nginx reverse proxy
 
-Redis caching for tasks
+-> Environment variables via AWS Secrets Manager
 
-JWT refresh tokens
+-> MongoDB indexing (email, userId)
 
-Load balancer (AWS ALB)
+-> Redis caching for tasks
 
-CI/CD GitHub Actions
+-> JWT refresh tokens
 
-CORS whitelist
+-> AWS ALB Load Balancer
 
-Rate limiting
+-> CI/CD with GitHub Actions
+
+-> Strict CORS whitelist
+
+-> Rate limiting + Helmet security middleware
